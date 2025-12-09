@@ -10,34 +10,36 @@ else:
 
 def serializedATN():
     return [
-        4,1,17,94,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,18,97,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,1,0,5,0,26,8,0,10,
         0,12,0,29,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,42,
-        8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,4,1,4,1,5,1,5,1,5,1,5,3,5,56,8,5,1,
-        6,1,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,5,8,68,8,8,10,8,12,8,71,9,
-        8,1,9,1,9,1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,1,10,1,11,1,11,
-        5,11,87,8,11,10,11,12,11,90,9,11,1,11,1,11,1,11,0,0,12,0,2,4,6,8,
-        10,12,14,16,18,20,22,0,2,1,0,13,15,1,0,2,4,89,0,27,1,0,0,0,2,41,
-        1,0,0,0,4,43,1,0,0,0,6,47,1,0,0,0,8,49,1,0,0,0,10,51,1,0,0,0,12,
-        57,1,0,0,0,14,59,1,0,0,0,16,64,1,0,0,0,18,72,1,0,0,0,20,78,1,0,0,
-        0,22,84,1,0,0,0,24,26,3,2,1,0,25,24,1,0,0,0,26,29,1,0,0,0,27,25,
-        1,0,0,0,27,28,1,0,0,0,28,30,1,0,0,0,29,27,1,0,0,0,30,31,5,0,0,1,
-        31,1,1,0,0,0,32,33,3,10,5,0,33,34,5,1,0,0,34,42,1,0,0,0,35,36,3,
-        12,6,0,36,37,5,1,0,0,37,42,1,0,0,0,38,42,3,18,9,0,39,42,3,20,10,
-        0,40,42,3,22,11,0,41,32,1,0,0,0,41,35,1,0,0,0,41,38,1,0,0,0,41,39,
-        1,0,0,0,41,40,1,0,0,0,42,3,1,0,0,0,43,44,3,6,3,0,44,45,3,8,4,0,45,
-        46,3,6,3,0,46,5,1,0,0,0,47,48,7,0,0,0,48,7,1,0,0,0,49,50,7,1,0,0,
-        50,9,1,0,0,0,51,52,5,13,0,0,52,55,5,12,0,0,53,56,5,14,0,0,54,56,
-        3,14,7,0,55,53,1,0,0,0,55,54,1,0,0,0,56,11,1,0,0,0,57,58,3,14,7,
-        0,58,13,1,0,0,0,59,60,5,13,0,0,60,61,5,5,0,0,61,62,3,16,8,0,62,63,
-        5,6,0,0,63,15,1,0,0,0,64,69,3,6,3,0,65,66,5,7,0,0,66,68,3,6,3,0,
-        67,65,1,0,0,0,68,71,1,0,0,0,69,67,1,0,0,0,69,70,1,0,0,0,70,17,1,
-        0,0,0,71,69,1,0,0,0,72,73,5,8,0,0,73,74,5,13,0,0,74,75,5,4,0,0,75,
-        76,5,13,0,0,76,77,3,22,11,0,77,19,1,0,0,0,78,79,5,9,0,0,79,80,5,
-        5,0,0,80,81,3,4,2,0,81,82,5,6,0,0,82,83,3,22,11,0,83,21,1,0,0,0,
-        84,88,5,10,0,0,85,87,3,2,1,0,86,85,1,0,0,0,87,90,1,0,0,0,88,86,1,
-        0,0,0,88,89,1,0,0,0,89,91,1,0,0,0,90,88,1,0,0,0,91,92,5,11,0,0,92,
-        23,1,0,0,0,5,27,41,55,69,88
+        8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,
+        3,5,59,8,5,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,5,8,71,8,8,10,
+        8,12,8,74,9,8,1,9,1,9,1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,1,
+        10,1,11,1,11,5,11,90,8,11,10,11,12,11,93,9,11,1,11,1,11,1,11,0,0,
+        12,0,2,4,6,8,10,12,14,16,18,20,22,0,2,2,0,13,13,15,16,1,0,2,4,95,
+        0,27,1,0,0,0,2,41,1,0,0,0,4,43,1,0,0,0,6,47,1,0,0,0,8,49,1,0,0,0,
+        10,51,1,0,0,0,12,60,1,0,0,0,14,62,1,0,0,0,16,67,1,0,0,0,18,75,1,
+        0,0,0,20,81,1,0,0,0,22,87,1,0,0,0,24,26,3,2,1,0,25,24,1,0,0,0,26,
+        29,1,0,0,0,27,25,1,0,0,0,27,28,1,0,0,0,28,30,1,0,0,0,29,27,1,0,0,
+        0,30,31,5,0,0,1,31,1,1,0,0,0,32,33,3,10,5,0,33,34,5,1,0,0,34,42,
+        1,0,0,0,35,36,3,12,6,0,36,37,5,1,0,0,37,42,1,0,0,0,38,42,3,18,9,
+        0,39,42,3,20,10,0,40,42,3,22,11,0,41,32,1,0,0,0,41,35,1,0,0,0,41,
+        38,1,0,0,0,41,39,1,0,0,0,41,40,1,0,0,0,42,3,1,0,0,0,43,44,3,6,3,
+        0,44,45,3,8,4,0,45,46,3,6,3,0,46,5,1,0,0,0,47,48,7,0,0,0,48,7,1,
+        0,0,0,49,50,7,1,0,0,50,9,1,0,0,0,51,52,5,13,0,0,52,58,5,12,0,0,53,
+        59,5,15,0,0,54,59,3,14,7,0,55,59,5,13,0,0,56,59,5,16,0,0,57,59,5,
+        14,0,0,58,53,1,0,0,0,58,54,1,0,0,0,58,55,1,0,0,0,58,56,1,0,0,0,58,
+        57,1,0,0,0,59,11,1,0,0,0,60,61,3,14,7,0,61,13,1,0,0,0,62,63,5,13,
+        0,0,63,64,5,5,0,0,64,65,3,16,8,0,65,66,5,6,0,0,66,15,1,0,0,0,67,
+        72,3,6,3,0,68,69,5,7,0,0,69,71,3,6,3,0,70,68,1,0,0,0,71,74,1,0,0,
+        0,72,70,1,0,0,0,72,73,1,0,0,0,73,17,1,0,0,0,74,72,1,0,0,0,75,76,
+        5,8,0,0,76,77,5,13,0,0,77,78,5,4,0,0,78,79,5,13,0,0,79,80,3,22,11,
+        0,80,19,1,0,0,0,81,82,5,9,0,0,82,83,5,5,0,0,83,84,3,4,2,0,84,85,
+        5,6,0,0,85,86,3,22,11,0,86,21,1,0,0,0,87,91,5,10,0,0,88,90,3,2,1,
+        0,89,88,1,0,0,0,90,93,1,0,0,0,91,89,1,0,0,0,91,92,1,0,0,0,92,94,
+        1,0,0,0,93,91,1,0,0,0,94,95,5,11,0,0,95,23,1,0,0,0,5,27,41,58,72,
+        91
     ]
 
 class FootprinterParser ( Parser ):
@@ -56,7 +58,8 @@ class FootprinterParser ( Parser ):
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "COLON", "NAME", "IP", "NUMBER", "SPACE", "COMMENT" ]
+                      "COLON", "NAME", "WORDLIST", "IP", "NUMBER", "SPACE", 
+                      "COMMENT" ]
 
     RULE_program = 0
     RULE_statement = 1
@@ -89,10 +92,11 @@ class FootprinterParser ( Parser ):
     T__10=11
     COLON=12
     NAME=13
-    IP=14
-    NUMBER=15
-    SPACE=16
-    COMMENT=17
+    WORDLIST=14
+    IP=15
+    NUMBER=16
+    SPACE=17
+    COMMENT=18
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -347,7 +351,7 @@ class FootprinterParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 47
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 57344) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 106496) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -413,8 +417,11 @@ class FootprinterParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def NAME(self):
-            return self.getToken(FootprinterParser.NAME, 0)
+        def NAME(self, i:int=None):
+            if i is None:
+                return self.getTokens(FootprinterParser.NAME)
+            else:
+                return self.getToken(FootprinterParser.NAME, i)
 
         def COLON(self):
             return self.getToken(FootprinterParser.COLON, 0)
@@ -425,6 +432,12 @@ class FootprinterParser ( Parser ):
         def functionCall(self):
             return self.getTypedRuleContext(FootprinterParser.FunctionCallContext,0)
 
+
+        def NUMBER(self):
+            return self.getToken(FootprinterParser.NUMBER, 0)
+
+        def WORDLIST(self):
+            return self.getToken(FootprinterParser.WORDLIST, 0)
 
         def getRuleIndex(self):
             return FootprinterParser.RULE_assignStmt
@@ -450,19 +463,34 @@ class FootprinterParser ( Parser ):
             self.match(FootprinterParser.NAME)
             self.state = 52
             self.match(FootprinterParser.COLON)
-            self.state = 55
+            self.state = 58
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [14]:
+            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+            if la_ == 1:
                 self.state = 53
                 self.match(FootprinterParser.IP)
                 pass
-            elif token in [13]:
+
+            elif la_ == 2:
                 self.state = 54
                 self.functionCall()
                 pass
-            else:
-                raise NoViableAltException(self)
+
+            elif la_ == 3:
+                self.state = 55
+                self.match(FootprinterParser.NAME)
+                pass
+
+            elif la_ == 4:
+                self.state = 56
+                self.match(FootprinterParser.NUMBER)
+                pass
+
+            elif la_ == 5:
+                self.state = 57
+                self.match(FootprinterParser.WORDLIST)
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -504,7 +532,7 @@ class FootprinterParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_funcCallStmt)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 57
+            self.state = 60
             self.functionCall()
         except RecognitionException as re:
             localctx.exception = re
@@ -549,13 +577,13 @@ class FootprinterParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_functionCall)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 59
-            self.match(FootprinterParser.NAME)
-            self.state = 60
-            self.match(FootprinterParser.T__4)
-            self.state = 61
-            self.funcArgs()
             self.state = 62
+            self.match(FootprinterParser.NAME)
+            self.state = 63
+            self.match(FootprinterParser.T__4)
+            self.state = 64
+            self.funcArgs()
+            self.state = 65
             self.match(FootprinterParser.T__5)
         except RecognitionException as re:
             localctx.exception = re
@@ -601,17 +629,17 @@ class FootprinterParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 64
+            self.state = 67
             self.expr()
-            self.state = 69
+            self.state = 72
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==7:
-                self.state = 65
+                self.state = 68
                 self.match(FootprinterParser.T__6)
-                self.state = 66
+                self.state = 69
                 self.expr()
-                self.state = 71
+                self.state = 74
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -661,15 +689,15 @@ class FootprinterParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_forStmt)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 72
-            self.match(FootprinterParser.T__7)
-            self.state = 73
-            self.match(FootprinterParser.NAME)
-            self.state = 74
-            self.match(FootprinterParser.T__3)
             self.state = 75
-            self.match(FootprinterParser.NAME)
+            self.match(FootprinterParser.T__7)
             self.state = 76
+            self.match(FootprinterParser.NAME)
+            self.state = 77
+            self.match(FootprinterParser.T__3)
+            self.state = 78
+            self.match(FootprinterParser.NAME)
+            self.state = 79
             self.block()
         except RecognitionException as re:
             localctx.exception = re
@@ -715,15 +743,15 @@ class FootprinterParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_caseStmt)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 78
-            self.match(FootprinterParser.T__8)
-            self.state = 79
-            self.match(FootprinterParser.T__4)
-            self.state = 80
-            self.condition()
             self.state = 81
-            self.match(FootprinterParser.T__5)
+            self.match(FootprinterParser.T__8)
             self.state = 82
+            self.match(FootprinterParser.T__4)
+            self.state = 83
+            self.condition()
+            self.state = 84
+            self.match(FootprinterParser.T__5)
+            self.state = 85
             self.block()
         except RecognitionException as re:
             localctx.exception = re
@@ -769,19 +797,19 @@ class FootprinterParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 84
+            self.state = 87
             self.match(FootprinterParser.T__9)
-            self.state = 88
+            self.state = 91
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & 9984) != 0):
-                self.state = 85
+                self.state = 88
                 self.statement()
-                self.state = 90
+                self.state = 93
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 91
+            self.state = 94
             self.match(FootprinterParser.T__10)
         except RecognitionException as re:
             localctx.exception = re

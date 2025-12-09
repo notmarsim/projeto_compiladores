@@ -3,9 +3,9 @@ grammar Footprinter;
 
 COLON : ':' ;
 NAME   : [a-zA-Z_][a-zA-Z0-9_]* ;
+WORDLIST: ('/'NAME('-'NAME)?)+ '.txt';
 IP     : [0-9]+ '.' [0-9]+ '.' [0-9]+ '.' [0-9]+ ;
 NUMBER : [0-9]+ ;
-
 SPACE   : [ \t\r\n]+ -> skip ;
 COMMENT : '#' ~[\r\n]* -> skip ;
 
@@ -37,7 +37,7 @@ cmpOp
 
 // host: 127.0.0.1;
 assignStmt
-    : NAME COLON (IP | functionCall)
+    : NAME COLON (IP | functionCall | NAME | NUMBER | WORDLIST)
     ;
 
 // scan_tcp(host);

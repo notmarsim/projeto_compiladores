@@ -20,11 +20,16 @@ def eval_node(t):
             return
 
         case FootprinterParser.AssignStmtContext():
-            name = t.NAME().getText()
+
+            name = t.NAME(0).getText()
             if t.IP():
                 value = t.IP().getText()
-            else:
+            elif t.WORDLIST():
+                value = t.WORDLIST().getText()
+            elif t.functionCall():
                 value = eval_node(t.functionCall())
+            else:
+                value = t.getChild(2).getText()
             mem[name] = value
             return value
 
