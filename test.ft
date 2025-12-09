@@ -1,0 +1,9 @@
+host: 127.0.0.1;
+openports: scan_tcp(host);
+
+for port in openports {
+    banner(port);
+    case (port == 80) {
+        enum(port);
+    }
+}
