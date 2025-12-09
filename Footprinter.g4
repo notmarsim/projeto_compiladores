@@ -1,5 +1,7 @@
 grammar Footprinter;
 
+
+COLON : ':' ;
 NAME   : [a-zA-Z_][a-zA-Z0-9_]* ;
 IP     : [0-9]+ '.' [0-9]+ '.' [0-9]+ '.' [0-9]+ ;
 NUMBER : [0-9]+ ;
@@ -35,16 +37,16 @@ cmpOp
 
 // host: 127.0.0.1;
 assignStmt
-    : NAME ':' (IP | functionCall)
+    : NAME COLON (IP | functionCall)
     ;
 
 // scan_tcp(host);
 funcCallStmt
-    : functionCall
+    : functionCall 
     ;
 
 functionCall
-    : NAME '(' funcArgs? ')'
+    : NAME '(' funcArgs ')'
     ;
 
 funcArgs
