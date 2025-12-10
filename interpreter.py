@@ -2,10 +2,13 @@ from antlr4 import *
 from FootprinterLexer import FootprinterLexer
 from FootprinterParser import FootprinterParser
 
+from semantic_analyzer import SemanticAnalyzer
+
 from modules import *
 
 mem = {}
 
+# 2. MANTER: A FUNÇÃO EVAL_NODE COMPLETA (seu código antigo)
 def eval_node(t):
     match t:
 
@@ -47,6 +50,7 @@ def eval_node(t):
             itVar = t.NAME(0).getText()
             listVar = t.NAME(1).getText()
             if listVar not in mem:
+                # Esta é uma verificação de *runtime*
                 raise Exception(f"variável '{listVar}' não definida")
             for value in mem[listVar]:
                 mem[itVar] = value
@@ -76,10 +80,33 @@ def eval_node(t):
                 eval_node(s)
             return
 
+        # Garante que qualquer código antigo, incluindo a exceção, está mantido.
     raise Exception(f"[ERRO] interpretando -> {t.getText()}")
 
 
 def run(code):
+    # ANÁLISE LÉXICA
     lexer = FootprinterLexer(InputStream(code))
-    parser = FootprinterParser(CommonTokenStream(lexer))
-    eval_node(parser.program())
+    stream = CommonTokenStream(lexer)
+
+    # ANÁLISE SINTÁTICA (Criação da AST)
+    parser = FootprinterParser(stream)
+    ast = parser.program()
+
+    # 3. ADIÇÃO: ETAPA DE ANÁLISE SEMÂNTICA
+    # =========================================================
+    analyzer = SemanticAnalyzer()
+    analyzer.visit(ast) 
+
+    if analyzer.has_errors():
+        print("\n--- EXECUÇÃO INTERROMPIDA: ERROS SEMÂNTICOS ENCONTRADOS ---")
+        for error in analyzer.semantic_errors:
+            print(f"  ❌ {error}") 
+        print("-------------------------------------------------------------")
+        return # IMPEDE A CHAMADA AO EVAL_NODE SE HOUVER ERROS
+    # =========================================================
+
+    # EXECUÇÃO (CÓDIGO ANTIGO MANTIDO)
+    print("\n--- Análise Semântica OK. Iniciando Execução ---")
+    eval_node(ast) 
+    print("--- Execução Finalizada ---")

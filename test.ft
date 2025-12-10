@@ -1,10 +1,13 @@
-host: 10.129.132.40;
-wordlist : /usr/share/SecLists/Discovery/Web-Content/common.txt;
-openports: scan_tcp(host);
+host: 127.0.0.1; // Tipo: IP (NÃO ITERÁVEL)
 
-for port in openports {
-    banner(port,host);
-    case (port == 80){
-        enum(port,wordlist,host);
-    }
+wordlist: /path/to/common.txt; // Tipo: WORDLIST (ITERÁVEL)
+
+//  ESTE DEVE GERAR ERRO SEMÂNTICO
+for char in host {
+    banner(char, host);
+}
+
+// ESTE DEVE PASSAR NA ANÁLISE SEMÂNTICA
+for line in wordlist {
+    banner(line, host);
 }
