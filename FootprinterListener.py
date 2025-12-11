@@ -116,5 +116,14 @@ class FootprinterListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by FootprinterParser#list.
+    def enterList(self, ctx:FootprinterParser.ListContext):
+        pass
+
+    # Exit a parse tree produced by FootprinterParser#list.
+    def exitList(self, ctx:FootprinterParser.ListContext):
+        pass
+
+
 
 del FootprinterParser

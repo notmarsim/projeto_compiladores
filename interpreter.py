@@ -42,15 +42,12 @@ def eval_node(t):
         case FootprinterParser.FunctionCallContext():
             func = t.NAME().getText()
             args = [eval_node(a) for a in t.funcArgs().expr()]
-            if func not in globals():
-                raise Exception(f"função '{func}' não encontrada")
             return globals()[func](*args)
 
         case FootprinterParser.ForStmtContext():
             itVar = t.NAME(0).getText()
             listVar = t.NAME(1).getText()
-            if listVar not in mem:
-                raise Exception(f"variável '{listVar}' não definida")
+            
 
             for value in mem[listVar]:
                 mem[itVar] = value
