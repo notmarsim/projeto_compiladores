@@ -37,7 +37,7 @@ cmpOp
 
 // host: 127.0.0.1;
 assignStmt
-    : NAME COLON (IP | functionCall | NAME | NUMBER | WORDLIST)
+    : NAME COLON (IP | functionCall | NAME | NUMBER | WORDLIST | list)
     ;
 
 // scan_tcp(host);
@@ -65,4 +65,11 @@ caseStmt
 
 block
     : '{' statement* '}'
+    ;
+
+list
+    : '[' val+=NUMBER (','val+=NUMBER)* ']'
+    | '[' val+=NAME (','val+=NAME)* ']'
+    | '[' val+=WORDLIST (','val+=WORDLIST)* ']'
+    | '[' val+=IP (','val+=IP)* ']'
     ;

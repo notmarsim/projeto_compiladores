@@ -15,8 +15,7 @@ def eval_node(t):
             return
 
         case FootprinterParser.StatementContext():
-            if t.getChildCount() > 0:
-                eval_node(t.getChild(0))
+            eval_node(t.getChild(0))
             return
 
         case FootprinterParser.AssignStmtContext():
@@ -28,6 +27,10 @@ def eval_node(t):
                 value = t.WORDLIST().getText()
             elif t.functionCall():
                 value = eval_node(t.functionCall())
+            elif t.NUMBER():
+                value = t.NUMBER().getText()
+            elif t.list_():
+                value = [v.text for v in t.list_().val]
             else:
                 value = t.getChild(2).getText()
             mem[name] = value
@@ -48,6 +51,7 @@ def eval_node(t):
             listVar = t.NAME(1).getText()
             if listVar not in mem:
                 raise Exception(f"variável '{listVar}' não definida")
+
             for value in mem[listVar]:
                 mem[itVar] = value
                 eval_node(t.block())
@@ -62,6 +66,14 @@ def eval_node(t):
             left = eval_node(t.expr(0))
             right = eval_node(t.expr(1))
             op = t.cmpOp().getText()
+
+            print(f"left: {left}")
+            print(f"right: {right}")
+            if type(left) == tuple:
+                return  (left[1] == right) if op == "==" else \
+                        (left[1] != right) if op == "!=" else \
+                        (str(left[1]) in right) if op == "in" else False
+
             return (left == right) if op == "==" else \
                    (left != right) if op == "!=" else \
                    (left in right) if op == "in" else False

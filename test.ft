@@ -1,10 +1,12 @@
-host: 10.129.132.40;
+host: [10.129.108.250];
 wordlist : /usr/share/SecLists/Discovery/Web-Content/common.txt;
 openports: scan_tcp(host);
+webPort: [80,443];
+
 
 for port in openports {
-    banner(port,host);
-    case (port == 80){
-        enum(port,wordlist,host);
+    banner(port);
+    case (port in webPort){
+        enum(port,wordlist);
     }
 }

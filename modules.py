@@ -3,47 +3,62 @@ import socket
 
 # nmap
 def scan_tcp(host="127.0.0.1"):
-    print(f"[+] Running NMAP TCP scan on {host}...")
-    result = subprocess.check_output(["nmap","-F", "--open", host, "-oG", "-"]).decode()
 
+    if type(host)!= list:
+        host = [host]
     ports = []
-    for line in result.splitlines():
-        if "Ports:" in line:
-            fields = line.split("Ports:")[1].split(",")
-            for f in fields:
-                if "open" in f:
-                    port = int(f.split("/")[0])
-                    ports.append(port)
+    for h in host:
+        print(f"[+] Running NMAP TCP scan on {h}...")
+        result = subprocess.check_output(["nmap","-F", "--open", h, "-oG", "-"]).decode()
+
+        for line in result.splitlines():
+            if "Ports:" in line:
+                fields = line.split("Ports:")[1].split(",")
+                for f in fields:
+                    if "open" in f:
+                        port = int(f.split("/")[0])
+                        ports.append((h,port))
 
     print(f"[+] Open TCP ports: {ports}")
     return ports
 
 
 def scan_udp(host="127.0.0.1"):
-    result = subprocess.check_output(["nmap", "-sU", "--open", host, "-oG", "-"]).decode()
+
+    if type(host)!= list:
+        host = [host]
     ports = []
-    for line in result.splitlines():
-        if "Ports:" in line:
-            fields = line.split("Ports:")[1].split(",")
-            for f in fields:
-                if "open" in f:
-                    port = int(f.split("/")[0])
-                    ports.append(port)
+
+    for h in host:
+        print(f"[+] Running NMAP TCP scan on {h}...")
+        result = subprocess.check_output(["nmap", "-sU", "--open", h, "-oG", "-"]).decode()
+
+        for line in result.splitlines():
+            if "Ports:" in line:
+                fields = line.split("Ports:")[1].split(",")
+                for f in fields:
+                    if "open" in f:
+                        port = int(f.split("/")[0])
+                        ports.append((h,port))
 
     print(f"[+] Open UDP ports: {ports}")
-    return print(f"[+] Running NMAP UDP scan on {host} (may be slow)...")
+    return ports
 
 
 
 # banner
-def banner(port, host="127.0.0.1"):
-    print(f"[+] Banner grab on {host}:{port}")
+def banner(p):
+    host,port = p
+
     try:
+        print(f"[+] Banner grab on {host}:{port}")
         s = socket.socket()
-        s.settimeout(10)
+        s.settimeout(15)
         s.connect((host, int(port)))
 
+
         data = s.recv(1024)
+
         print("[Banner]", data.decode(errors="ignore"))
         s.close()
     except Exception as e:
@@ -51,7 +66,9 @@ def banner(port, host="127.0.0.1"):
 
 
 # enum
-def enum(port, wordlist, host="127.0.0.1"):
+def enum(p, wordlist):
+
+    host,port = p
     url = f"http://{host}:{port}"
     print(f"[+] Running Gobuster on {url}")
 
