@@ -89,4 +89,5 @@ def generate(t):
 def run(code):
     lexer = FootprinterLexer(InputStream(code))
     parser = FootprinterParser(CommonTokenStream(lexer))
-    [print(l,'\n') for l in generate(parser.program())]
+    [print(l) for l in generate(parser.program())]
+    print('\n')

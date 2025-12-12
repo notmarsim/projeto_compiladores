@@ -40,13 +40,15 @@ def analyze(t):
         case FootprinterParser.AssignStmtContext():
             name = t.NAME(0).getText()
             if name in dec:
-                raise Exception('Variável já foi declarada')
+                raise Exception(f'Variável {name} já foi declarada')
+            if t.functionCall():
+                analyze(t.functionCall())
             dec += [name]
             return
         
         case FootprinterParser.FunctionCallContext():
             func = t.NAME().getText()
-            args = [analyze(a) for a in t.funcArgs().expr()]
+            [analyze(a) for a in t.funcArgs().expr()]
             if func not in globals():
                 raise Exception(f"função '{func}' não encontrada")
             return

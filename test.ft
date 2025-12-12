@@ -1,5 +1,5 @@
 host: [10.129.108.250];
-wordlist : /usr/share/SecLists/Discovery/Web-Content/common.txt;
+wordlist : /workspace/projeto-compiladores/wordlist.txt;
 openports: scan_tcp(host);
 webPort: [80,443];
 
