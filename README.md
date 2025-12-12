@@ -154,3 +154,9 @@ from interpreter import run
 
 run(open("examples/teste.ft").read())
 ```
+---
+## 👤 Equipe
+- Beatriz de Melo Ferraz
+- Ian Teixeira Pimentel
+- Márcio Henrique Ribeiro
+- Maria Luísa Barreto
