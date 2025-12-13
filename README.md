@@ -139,15 +139,16 @@ Executa banner(port)
 Se a porta estiver em [80,443], executa enum(port, wordlist)
 
 ---
-## ▶️ Como executar
+## ▶️ Como executar no codespace
 1. Instale o ANTLR4
 ```
 pip install antlr4-tools antlr4-python3-runtime
 ```
-2. Instale a ferramenta nmap
+2. Instale as ferramentas nmap e gobuster
 ```
 sudo apt-get update
 sudo apt-get install nmap
+sudo apt install gobuster
 ```
 3. Gere o lexer e parser
 ```
@@ -158,6 +159,34 @@ antlr4 -Dlanguage=Python3 Footprinter.g4
 python main.py
 ```
 ---
+## Testes sugeridos:
+
+### Detecção de banner
+1. Instale a ferramenta ncat
+```
+sudo apt install ncat
+```
+2. Execute esse comando em um terminal secundário
+```
+while true; do
+  echo -e "BANNER TEST OK\r\n" | ncat -lvnp <n° da porta >= 2001>
+done
+```
+3. Execute o código já definido pelo terminal primário
+```
+python main.py
+```
+### Gobuster
+1. Execute esse comando em um terminal secundário
+```
+cd webroot
+python -m http.server <n° da porta >= 2001>
+```
+2. Adicionar n° da porta em webPort no arquivo .ft
+3. Execute o código pelo terminal primário
+```
+python main.py
+```
 ## 👤 Equipe
 - Beatriz de Melo Ferraz
 - Ian Teixeira Pimentel
