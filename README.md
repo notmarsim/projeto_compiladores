@@ -142,17 +142,20 @@ Se a porta estiver em [80,443], executa enum(port, wordlist)
 ## ▶️ Como executar
 1. Instale o ANTLR4
 ```
-pip install antlr4-tools
+pip install antlr4-tools antlr4-python3-runtime
 ```
-2. Gere o lexer e parser
+2. Instale a ferramenta nmap
+```
+sudo apt-get update
+sudo apt-get install nmap
+```
+3. Gere o lexer e parser
 ```
 antlr4 -Dlanguage=Python3 Footprinter.g4
 ```
-3. Execute um script .ft
+4. Execute um script .ft
 ```
-from interpreter import run
-
-run(open("examples/teste.ft").read())
+python main.py
 ```
 ---
 ## 👤 Equipe
