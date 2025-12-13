@@ -100,6 +100,8 @@ Footprinter/
 ├── FootprinterLexer.py      (gerado pelo ANTLR)
 ├── FootprinterParser.py     (gerado pelo ANTLR)
 │
+├── analyzer.py           (analyze + run)
+├── generator.py           (generate + run)
 ├── interpreter.py           (eval_node + run)
 ├── modules.py               (funções chamadas pela DSL)
 │
