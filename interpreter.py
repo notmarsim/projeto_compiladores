@@ -64,8 +64,6 @@ def eval_node(t):
             right = eval_node(t.expr(1))
             op = t.cmpOp().getText()
 
-            print(f"left: {left}")
-            print(f"right: {right}")
             if type(left) == tuple:
                 return  (left[1] == right) if op == "==" else \
                         (left[1] != right) if op == "!=" else \

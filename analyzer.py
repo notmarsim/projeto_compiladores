@@ -62,7 +62,7 @@ def analyze(t):
         case FootprinterParser.ExprContext():
             if t.NAME() and not t.NAME().getText() in dec:
                 raise Exception(f'Variável {t.NAME().getText()} não foi declarada')
-
+            return
 
     raise Exception(f"[ERRO] interpretando -> {t.getText()}")
 

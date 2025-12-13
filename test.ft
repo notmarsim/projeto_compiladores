@@ -1,5 +1,5 @@
-host: [10.129.108.250];
-wordlist : /workspace/projeto-compiladores/wordlist.txt;
+host: [127.0.0.1];
+wordlist : /workspaces/projeto_compiladores/wordlist.txt;
 openports: scan_tcp(host);
 webPort: [80,443];
 

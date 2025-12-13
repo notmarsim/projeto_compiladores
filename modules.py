@@ -1,5 +1,6 @@
 import subprocess
 import socket
+import re
 
 # nmap
 def scan_tcp(host="127.0.0.1"):
@@ -56,10 +57,16 @@ def banner(p):
         s.settimeout(15)
         s.connect((host, int(port)))
 
+        s.sendall(b"HEAD / HTTP/1.0\r\n\r\n")
 
-        data = s.recv(1024)
+        data = s.recv(1024).decode(errors="ignore")
 
-        print("[Banner]", data.decode(errors="ignore"))
+        m = re.search(r"^Server:\s*(.+)$", data, re.MULTILINE)
+        if m:
+            print("[Banner]", m.group(1))
+        else:
+            print("[Banner]", data)
+
         s.close()
     except Exception as e:
         print("[!] No banner or service refused:", e)
